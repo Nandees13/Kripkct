@@ -1008,19 +1008,67 @@
       .step-heading { font-size: 1.2rem; }
       .btn-next, .btn-back { padding: 9px 18px; font-size: .8rem; }
     }
+
+    .app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.header-left,
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-center {
+  flex: 1;
+  text-align: center;
+}
+
+.header-logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+.header-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0f6e56;
+}
+
+.header-subtitle {
+  margin-top: 4px;
+  font-size: 0.9rem;
+  color: #64748b;
+}
   </style>
 </head>
 
 <body>
   <!-- =============== HEADER =============== -->
   <header class="app-header">
-    <div class="header-emblem">KR</div>
-    <div class="header-text">
-      <div class="header-title">KRIP — Knowledge Research &amp; Innovation Program</div>
-      <div class="header-subtitle">Application Portal · 2025–26</div>
+  <div class="header-left">
+    <img src="images/ki.png" alt="KCT Logo" class="header-logo">
+  </div>
+
+  <div class="header-center">
+    <div class="header-title">
+      KRIP — Kumaraguru Research & Internship Program
     </div>
-    <div class="header-badge">Open Applications</div>
-  </header>
+    <div class="header-subtitle">
+      Application Portal · 2026
+    </div>
+  </div>
+
+  <div class="header-right">
+    <img src="images/re.png" alt="Research Cell Logo" class="header-logo">
+  </div>
+</header>
   <div class="progress-bar-wrapper">
     <div class="progress-bar-fill" id="topProgressBar" style="width:0%"></div>
   </div>

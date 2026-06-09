@@ -1178,7 +1178,7 @@
     'Reflect on your experiences and what you observe in the world around you.',
     'Help us understand how you approach challenges, people, and problems.',
     'Demonstrate your ability to reason through complex ideas and statements.',
-    'Upload a handwritten Statement of Purpose (PDF). This is a required document.',
+    'Upload a Statement of Purpose (PDF). This is a required document.',
     'Review your information and submit your completed application.',
   ];
 
@@ -1198,15 +1198,11 @@
   ];
 
   const DEPARTMENTS = [
-    'Artificial Intelligence & Data Science',
-    'Artificial Intelligence & Machine Learning',
-    'Computer Science & Engineering', 'Information Technology',
-    'Electronics & Communication Engineering',
-    'Electrical & Electronics Engineering', 'Mechanical Engineering',
-    'Civil Engineering', 'Mechatronics Engineering', 'Biotechnology',
-    'Fashion Technology', 'Textile Technology', 'Automobile Engineering',
-    'Robotics & Automation', 'Computer Science & Business Systems',
-    'B.Sc / M.Sc Programmes', 'Other',
+    'Aeronautical Engineering','Artificial Intelligence & Data Science',
+    'Automobile Engineering','Biotechnology','Civil Engineering','Computer Science & Engineering','Electrical & Electronics Engineering','Electronics & Communication Engineering','Electronics and Instrumentation Engineering','Fashion Technology', 'Information Technology',
+     'Mechanical Engineering',
+     'Mechatronics Engineering', 
+     'Textile Technology', 'Other',
   ];
 
   const LS_KEY = 'krip_form_data_v2';
@@ -1299,19 +1295,19 @@
       if (!formData.interests.excites)              errs.push('Please select what excites you more.');
     }
     if (step === 3) {
-      if (wordCount(formData.observations.q1) < 20) errs.push('Q1: Please write at least 20 words.');
-      if (wordCount(formData.observations.q2) < 20) errs.push('Q2: Please write at least 20 words.');
-      if (wordCount(formData.observations.q3) < 20) errs.push('Q3: Please write at least 20 words.');
+      if (wordCount(formData.observations.q1) < 10) errs.push('Q1: Please write at least 20 words.');
+      if (wordCount(formData.observations.q2) < 10) errs.push('Q2: Please write at least 20 words.');
+      if (wordCount(formData.observations.q3) < 10) errs.push('Q3: Please write at least 20 words.');
     }
     if (step === 4) {
-      if (wordCount(formData.readiness.q4) < 20) errs.push('Q4: Please write at least 20 words.');
-      if (wordCount(formData.readiness.q5) < 20) errs.push('Q5: Please write at least 20 words.');
+      if (wordCount(formData.readiness.q4) < 10) errs.push('Q4: Please write at least 20 words.');
+      if (wordCount(formData.readiness.q5) < 10) errs.push('Q5: Please write at least 20 words.');
       if (formData.readiness.q6.filter(q => q.trim().length > 0).length < 3)
         errs.push('Q6: Please enter at least 3 questions.');
     }
     if (step === 5) {
-      if (wordCount(formData.thinking.q7) < 20) errs.push('Q7: Please write at least 20 words.');
-      if (wordCount(formData.thinking.q8) < 20) errs.push('Q8: Please write at least 20 words.');
+      if (wordCount(formData.thinking.q7) < 10) errs.push('Q7: Please write at least 20 words.');
+      if (wordCount(formData.thinking.q8) < 10) errs.push('Q8: Please write at least 20 words.');
     }
     if (step === 6) {
       if (!formData.sop.file && !formData.sop.fileName) errs.push('Please upload your Statement of Purpose as a PDF.');
@@ -1497,7 +1493,7 @@
       <div class="elig-box">
         <div class="elig-box-title">What You Need Before Applying</div>
         <div class="elig-item"><div class="elig-check">✓</div><div class="elig-text">20–30 minutes of uninterrupted time to complete the application</div></div>
-        <div class="elig-item"><div class="elig-check">✓</div><div class="elig-text">A handwritten Statement of Purpose (scanned or photographed as PDF)</div></div>
+        <div class="elig-item"><div class="elig-check">✓</div><div class="elig-text">A Statement of Purpose as pdf</div></div>
         <div class="elig-item"><div class="elig-check">✓</div><div class="elig-text">Genuine reflection on your own experiences and observations</div></div>
         <div class="elig-item"><div class="elig-check">✓</div><div class="elig-text">Willingness to participate in field visits, team activities, and critique sessions</div></div>
       </div>
@@ -1562,7 +1558,7 @@
       <div class="form-row">
         <div class="form-col">
           <label for="p_email">Institutional Email <span class="required-star" aria-hidden="true">*</span></label>
-          <input type="email" id="p_email" placeholder="yourname@institution.edu.in" autocomplete="email" aria-required="true" />
+          <input type="email" id="p_email" placeholder="yourname@institution.ac.in" autocomplete="email" aria-required="true" />
           <div class="field-error" id="err_email"></div>
         </div>
         <div class="form-col">
@@ -1685,7 +1681,6 @@
             <li>What motivates your interest in understanding real-world problems?</li>
             <li>What do you hope to learn through this experience?</li>
             <li>How do you think KRIP will contribute to your personal and academic growth?</li>
-            <li>Must be handwritten — not typed</li>
             <li>500–700 words in length</li>
             <li>Include your full name and register number on the first page</li>
             <li>Upload as a PDF file (max 10 MB)</li>
